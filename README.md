@@ -21,7 +21,7 @@ Or run `composer require lucasmichot/laravel-ide-laraveldotenv:dev-master` direc
     "lucasmichot/laraveldotenv": "dev-master"
 }
 ````
-After updating composer, add the `LaraveldotenvServiceProvider` at the bottom of the Providers array in `app/config/app.php`:
+After running `composer update`, add the `LaraveldotenvServiceProvider` at the bottom of the Providers array in `app/config/app.php`:
 
 `````php
 'providers' => array(
