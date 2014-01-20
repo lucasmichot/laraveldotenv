@@ -28,11 +28,8 @@ class LaraveldotenvServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        // get .env full path
-        $env_filename = base_path().'/.env';
-
         // if .env file is readable, process it like a .ini file (without sections)
-        $variables = parse_ini_file($env_filename, false);
+        $variables = parse_ini_file(base_path().'/.env', false);
         if ($variables !== false) {
             // merge variables into $_ENV and $_SERVER
             $_ENV    = array_merge($_ENV, $variables);
