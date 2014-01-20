@@ -4,11 +4,11 @@ A very simple utility to set a environment variables file for your Laravel proje
 
 [![Latest Stable Version](https://poser.pugx.org/lucasmichot/laraveldotenv/v/stable.png)](https://packagist.org/packages/lucasmichot/laraveldotenv)
 [![Total Downloads](https://poser.pugx.org/lucasmichot/laraveldotenv/downloads.png)](https://packagist.org/packages/lucasmichot/laraveldotenv)
-[![Build Status](https://travis-ci.org/lucasmichot/laraveldotenv.png)](https://travis-ci.org/lucasmichot/laraveldotenv)
 
 * [Requiring/Loading](#requiringloading)
 * [Usage](#usage)
 * [Note](#note)
+* [TODO](#todo)
 * [License](#license)
 
 ## Requiring / Loading
@@ -66,6 +66,10 @@ Keep in mind that this `.env` file must shall not be committed in your repositor
 Ensure to add `.env` to your `.gitignore` file.
 
 To ensure this file will not be available in the the release archive, simply add `.env export-ignore` to your `.gitattributes` file.
+
+## Todo
+
+- Add tests.
 
 ## License
 
