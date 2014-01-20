@@ -19,5 +19,6 @@
 			"Lucasmichot\\Laraveldotenv\\": "src/"
 		}
 	},
+	"minimum-stability": "dev",
 	"license": "MIT"
 }
