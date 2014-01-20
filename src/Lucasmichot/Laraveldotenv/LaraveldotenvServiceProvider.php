@@ -5,7 +5,6 @@ use Dotenv;
 
 class LaraveldotenvServiceProvider extends ServiceProvider
 {
-
     /**
      * Indicates if loading of the provider is deferred.
      *
@@ -30,7 +29,14 @@ class LaraveldotenvServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        Dotenv::load(base_path());
+        // get full .env filename
+        $env_filename = base_path().'/.env';
+
+        // if file exists
+        if (File::exists($env_filename)) {
+            // load it
+            Dotenv::load(base_path());
+        }
     }
 
     /**

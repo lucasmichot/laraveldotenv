@@ -12,13 +12,13 @@
     "require": {
         "php": ">=5.3.0",
         "illuminate/support": "4.1.*",
-        "vlucas/phpdotenv": "1.*"
+        "vlucas/phpdotenv": "dev-master"
     },
     "autoload": {
         "psr-0": {
             "Lucasmichot\\Laraveldotenv\\": "src/"
         }
     },
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "license": "MIT"
 }
