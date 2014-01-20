@@ -45,15 +45,26 @@ DB_USER=root
 DB_PASS=password
 ````
 
-Then in your `database.php` config file, you can use the existing variables with `getenv()` function:
+Keys and values are automatically recognized and processed so than you could even write your `.env` file this way and get the same result as above:
+
+````ìni
+DB_HOST   =    localhost
+DB_NAME=  "database-name"
+DB_USER="root"
+
+DB_PASS=    password
+````
+
+
+Then in your `database.php` config file, you can use the existing variables in `$_ENV` array:
 
 ````php
 'mysql' => array(
     'driver'    => 'mysql',
-    'host'      => getenv('DB_HOST'),
-    'database'  => getenv('DB_NAME'),
-    'username'  => getenv('DB_USER'),
-    'password'  => getenv('DB_PASS'),
+    'host'      => $_ENV['DB_HOST'],
+    'database'  => $_ENV['DB_NAME'],
+    'username'  => $_ENV['DB_USER'],
+    'password'  => $_ENV['DB_PASS'],
     'charset'   => 'utf8',
     'collation' => 'utf8_unicode_ci',
     'prefix'    => '',

@@ -1,7 +1,6 @@
 <?php namespace Lucasmichot\Laraveldotenv;
 
 use Illuminate\Support\ServiceProvider;
-use Dotenv;
 
 class LaraveldotenvServiceProvider extends ServiceProvider
 {
@@ -29,13 +28,15 @@ class LaraveldotenvServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        // get full .env filename
+        // get .env full path
         $env_filename = base_path().'/.env';
 
-        // if file exists
-        if (File::exists($env_filename)) {
-            // load it
-            Dotenv::load(base_path());
+        // if .env file is readable, process it like a .ini file (without sections)
+        $variables = parse_ini_file($env_filename, false);
+        if ($variables !== false) {
+            // merge variables into $_ENV and $_SERVER
+            $_ENV    = array_merge($_ENV, $variables);
+            $_SERVER = array_merge($_SERVER, $variables);
         }
     }
 
@@ -46,7 +47,6 @@ class LaraveldotenvServiceProvider extends ServiceProvider
      */
     public function provides()
     {
-        // No services registered
+        // no service provided
     }
-
 }
