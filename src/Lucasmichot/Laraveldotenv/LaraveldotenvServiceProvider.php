@@ -34,7 +34,7 @@ class LaraveldotenvServiceProvider extends ServiceProvider
         // if .env file exists
         if (file_exists($env_filename)) {
             // if .env file is readable, process it like a .ini file (without sections)
-            $variables = parse_ini_file(base_path() . '/.env', false);
+            $variables = parse_ini_file($env_filename, false);
             if ($variables !== false) {
                 // merge variables into $_ENV and $_SERVER arrays
                 $_ENV = array_merge($_ENV, $variables);
